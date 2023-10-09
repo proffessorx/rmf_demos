@@ -1,0 +1,24 @@
+<?xml version='1.0' ?>                                                                                                                                 
+ 
+<launch>
+ <arg name="use_sim_time" default="false"/>
+
+  <!-- Common launch -->
+  <include file="$(find-pkg-share rmf_demos)/common.launch.xml">
+    <arg name="use_sim_time" value="$(var use_sim_time)"/>
+    <arg name="viz_config_file" value ="$(find-pkg-share rmf_demos)/include/mp3/mp3.rviz"/>
+    <arg name="config_file" value="$(find-pkg-share rmf_demos_maps)/mp3/mp3.building.yaml"/>
+    <arg name="dashboard_config_file" value="$(find-pkg-share rmf_demos_dashboard_resources)/mp3/dashboard_config.json"/>
+  </include>
+
+  <!-- TinyRobot fleet adapter -->
+  <group>
+    <include file="$(find-pkg-share rmf_demos_fleet_adapter)/launch/fleet_adapter.launch.xml">
+      <arg name="use_sim_time" value="$(var use_sim_time)"/>
+      <arg name="nav_graph_file" value="$(find-pkg-share rmf_demos_maps)/maps/mp3/nav_graphs/2.yaml" />
+      <arg name="config_file" value="$(find-pkg-share rmf_demos)/config/mp3/tinyRobot_config.yaml"/>
+    </include>
+  </group>
+
+</launch>
+
