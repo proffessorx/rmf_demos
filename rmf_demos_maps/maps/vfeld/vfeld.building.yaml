@@ -3,7 +3,7 @@ crowd_sim:
   agent_groups:
     - {agents_name: [tinyRobot1, tinyRobot2], agents_number: 2, group_id: 0, profile_selector: external_agent, state_selector: external_static, x: 0, y: 0}
   agent_profiles:
-    - {ORCA_tau: 1, ORCA_tauObst: 0.4, class: 1, max_accel: 0, max_angle_vel: 0, max_neighbors: 10, max_speed: 0, name: external_agent, neighbor_dist: 5, obstacle_set: 1, pref_speed: 0, r: 0.25}
+    - {ORCA_tau: 1, ORCA_tauObst: 0.40000000000000002, class: 1, max_accel: 0, max_angle_vel: 0, max_neighbors: 10, max_speed: 0, name: external_agent, neighbor_dist: 5, obstacle_set: 1, pref_speed: 0, r: 0.25}
   enable: 0
   goal_sets: []
   model_types: []
@@ -11,7 +11,7 @@ crowd_sim:
   states:
     - {final: 1, goal_set: -1, name: external_static, navmesh_file_name: ""}
   transitions: []
-  update_time_step: 0.1
+  update_time_step: 0.10000000000000001
 graphs:
   {}
 levels:
@@ -74,6 +74,9 @@ levels:
       - [26, 27, {bidirectional: [4, true], demo_mock_floor_name: [1, ""], demo_mock_lift_name: [1, ""], graph_idx: [2, 0], orientation: [1, ""], speed_limit: [3, 0]}]
     layers:
       {}
+    measurements:
+      - [125, 126, {distance: [3, 40]}]
+      - [126, 127, {distance: [3, 20]}]
     models:
       - {dispensable: false, model_name: OpenRobotics/BigCubicle, name: OpenRobotics/BigCubicle, static: true, x: 82.082999999999998, y: 319.024, yaw: 1.5708, z: 0}
       - {dispensable: false, model_name: OpenRobotics/BigCubicle, name: OpenRobotics/BigCubicle, static: true, x: 293.44, y: 233.75299999999999, yaw: 1.5708, z: 0}
@@ -231,6 +234,9 @@ levels:
       - [394.16800000000001, 681.81700000000001, 0, ""]
       - [394.88099999999997, 721.01900000000001, 0, ""]
       - [219.18299999999999, 479.23000000000002, 0, ""]
+      - [2.6000000000000001, 5.556, 0, ""]
+      - [2.6859999999999999, 869.19600000000003, 0, ""]
+      - [474.16399999999999, 869.19600000000003, 0, ""]
     walls:
       - [34, 35, {alpha: [3, 1], texture_height: [3, 2.5], texture_name: [1, default], texture_scale: [3, 1], texture_width: [3, 1]}]
       - [35, 36, {alpha: [3, 1], texture_height: [3, 2.5], texture_name: [1, default], texture_scale: [3, 1], texture_width: [3, 1]}]
